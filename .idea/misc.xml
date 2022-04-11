@@ -7,8 +7,10 @@
         <entry key="app/src/main/res/drawable/workout_icon.xml" value="0.2745" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/activity_workout_list.xml" value="0.15462962962962962" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/fragment_workout.xml" value="0.4244791666666667" />
+        <entry key="app/src/main/res/layout/recycler_row.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.4244791666666667" />
       </map>
     </option>
