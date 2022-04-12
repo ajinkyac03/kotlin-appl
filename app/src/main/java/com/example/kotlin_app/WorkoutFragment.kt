@@ -5,6 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_workout.*
+import kotlinx.coroutines.flow.collectLatest
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +26,7 @@ class WorkoutFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var recyclerViewAdapter: RecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +42,27 @@ class WorkoutFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_workout, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val appContext = requireContext().applicationContext
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(appContext)
+            val decoration = DividerItemDecoration(appContext, DividerItemDecoration.VERTICAL)
+            addItemDecoration(decoration)
+            recyclerViewAdapter = RecyclerViewAdapter()
+            adapter = recyclerViewAdapter
+
+        }
+
+        val viewModel  = ViewModelProvider(this).get(WorkoutListViewModel::class.java)
+        lifecycleScope.launchWhenCreated {
+            viewModel.getListData().collectLatest {
+                recyclerViewAdapter.submitData(it)
+            }
+        }
     }
 
     companion object {
