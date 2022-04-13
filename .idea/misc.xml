@@ -5,8 +5,11 @@
       <map>
         <entry key="app/src/main/res/drawable/home_icon.xml" value="0.2745" />
         <entry key="app/src/main/res/drawable/workout_icon.xml" value="0.2745" />
+        <entry key="app/src/main/res/layout/activity_events_list.xml" value="0.34322916666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23229166666666667" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/activity_workout_list.xml" value="0.15462962962962962" />
+        <entry key="app/src/main/res/layout/event_recycler_row.xml" value="0.1875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/fragment_workout.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.4244791666666667" />
